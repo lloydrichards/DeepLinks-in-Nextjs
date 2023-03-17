@@ -22,7 +22,14 @@ export default function RootLayout({
               <Link href="/about">About</Link>
             </li>
             <li className="btn-ghost btn text-xl normal-case">
-              <Link href={`/about#topic="sports"`}>About:Sports</Link>
+              <Link href={`/about#topic="sports"`} replace>
+                About:Sports
+              </Link>
+            </li>
+            <li className="btn-ghost btn text-xl normal-case">
+              <Link href={`/about#topic="${name}"`} replace>
+                About:{name}
+              </Link>
             </li>
             <li className="btn-ghost btn text-xl normal-case">
               <Link href={`/about#topic="${name}"`}>About:{name}</Link>
