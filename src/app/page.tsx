@@ -1,8 +1,6 @@
 "use client";
-import { atomWithHashSync } from "@/utils/atoms";
+import { nameAtom } from "@/store/atoms";
 import { useAtom } from "jotai";
-
-const nameAtom = atomWithHashSync<string>("name", "");
 
 export default function Home() {
   const [name, setName] = useAtom(nameAtom);

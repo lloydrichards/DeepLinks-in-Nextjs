@@ -1,14 +1,10 @@
 "use client";
-import { atomWithHashSync } from "@/utils/atoms";
+import { toggleAtom, topicAtom } from "@/store/atoms";
 import { useAtom, useAtomValue } from "jotai";
-import { atomWithHash } from "jotai-location";
-import Link from "next/link";
-
-const topicAtom = atomWithHashSync<string>("topic", "");
-const toggleAtom = atomWithHash<boolean>("toggle", false);
 
 export default function Home() {
   const topic = useAtomValue(topicAtom);
+  console.log("topic", topic);
   const [toggle, setToggle] = useAtom(toggleAtom);
   return (
     <main className="flex flex-col gap-4">
