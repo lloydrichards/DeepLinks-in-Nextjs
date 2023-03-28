@@ -4,7 +4,7 @@ import { useAtom, useAtomValue } from "jotai";
 
 export default function Home() {
   const topic = useAtomValue(topicAtom);
-  console.log("topic", topic);
+  console.log("topic from hash:", topic);
   const [toggle, setToggle] = useAtom(toggleAtom);
   return (
     <main className="flex flex-col gap-4">
