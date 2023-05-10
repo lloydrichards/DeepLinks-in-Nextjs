@@ -1,14 +1,14 @@
 "use client";
-import { toggleAtom, topicAtom } from "@/store/atoms";
+import { toggleAtom, tagAtom, nameAtom } from "@/store/atoms";
 import { useAtom, useAtomValue } from "jotai";
 
-export default function Home() {
-  const topic = useAtomValue(topicAtom);
-  console.log("topic from hash:", topic);
+export default function Post() {
+  const tag = useAtomValue(tagAtom);
+  const name = useAtomValue(nameAtom);
   const [toggle, setToggle] = useAtom(toggleAtom);
   return (
     <main className="flex flex-col gap-4">
-      <h1 className="text-3xl font-bold">Lets talk about [ {topic} ]</h1>
+      <h1 className="text-3xl font-bold">Lets talk about [ {tag} ]</h1>
       <div className="form-control">
         <label className="label cursor-pointer">
           <span className="label-text">Remember me</span>
@@ -20,6 +20,8 @@ export default function Home() {
           />
         </label>
       </div>
+      <p>The name atom is: [ {name || "not found"} ]</p>
+      <p>The tag atom (hash) is: [ {tag || "not found"} ]</p>
     </main>
   );
 }
